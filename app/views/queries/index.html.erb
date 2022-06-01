@@ -1,0 +1,41 @@
+<div class="container mx-auto mt-10 px-5 flex justify-center">
+<div class="grid grid-cols-3 gap-1 justify-center w-full">
+    <div></div>
+    <div class="text-center mt-10 mb-20"> 
+        <p class="font-poirot text-7xl">Again, WTF?</p><br>
+        <p class="font-poirot text-4xl" >(what's the feeling?)</p>
+    </div>
+    <div></div>
+        <div></div>
+    <div class="justify-center">           
+        <%= form_with model: @query, local: false do |form| %>
+            <%= form.text_field :content, required: true, :style => "width: 100%;" %><br>
+            <%= form.submit "Analyze", id: "analyze_btn" %>
+        <% end %>
+    </div>
+        <div></div>
+    <div class="w-full col-span-3" id="results" style="visibility: hidden">
+        <sl-tab-group>
+            <sl-tab slot="nav" panel="general">General</sl-tab>
+            <sl-tab slot="nav" panel="sentiment">Sentiment (Raw)</sl-tab>
+            <sl-tab slot="nav" panel="entities">Entities (Raw)</sl-tab>
+            <sl-tab slot="nav" panel="syntax">Syntax (Raw)</sl-tab>
+
+            <sl-tab-panel name="general">
+                <p class="text-large font-semibold font-jost">Language</p>
+                <p class="text-large font-jost"><span id="results_language"></span></p>
+                <br>
+                <p class="text-large font-semibold font-jost">Sentiment Score</p>
+                <p class="text-large font-jost"><span id="results_score"></span></p>
+                <br>
+                <p class="text-large font-semibold font-jost">Sentiment Magnitude</p>
+                <p class="text-large font-jost"><span id="results_magnitude"></span></p>
+                <br>
+            </sl-tab-panel>
+            <sl-tab-panel name="sentiment"><span id="sentiment_raw"></span></sl-tab-panel>
+            <sl-tab-panel name="entities"><span id="entities_raw"></span></sl-tab-panel>
+            <sl-tab-panel name="syntax"><span id="syntax_raw"></span></sl-tab-panel>
+        </sl-tab-group>
+    </div>
+</div>   
+</div>

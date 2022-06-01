@@ -1,0 +1,20 @@
+document.getElementById("results").style.visibility = 'visible';
+
+var queries_language = document.querySelector("#results_language");
+queries_language.replaceChildren( "<%= j @query.sentiment_language %>");
+
+var queries_score = document.querySelector("#results_score");
+queries_score.replaceChildren( "<%= j @query.sentiment_score %>");
+
+var queries_magnitude = document.querySelector("#results_magnitude");
+queries_magnitude.replaceChildren( "<%= j @query.sentiment_magnitude %>");
+
+
+var rsentiment_raw = document.querySelector("#sentiment_raw");
+rsentiment_raw.replaceChildren( "<%= j @query.sentiment_raw %>");
+
+var rentities_raw = document.querySelector("#entities_raw");
+rentities_raw.replaceChildren( "<%= j @query.entities_raw %>");
+
+var rsyntax_raw = document.querySelector("#syntax_raw");
+rsyntax_raw.replaceChildren( "<%= j @query.syntax_raw %>");

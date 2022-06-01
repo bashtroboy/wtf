@@ -1,0 +1,13 @@
+<%= link_to(query) do %>
+    <li class="list_item">
+        <%= query.content %>
+        <br><br>
+        <span>
+            Language: <%= query.sentiment_language %>, Score: <%= query.sentiment_score.to_f.round(5) %>, Magnitude: <%= query.sentiment_magnitude.to_f.round(5) %>
+        </span>
+        <br>
+        <span>
+            <%= query.created_at %>
+        </span>
+    </li>
+<% end %>

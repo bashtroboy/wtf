@@ -1,0 +1,38 @@
+<div class="container mx-auto mt-10 px-5 flex justify-center">
+<div class="grid grid-cols-1 gap-1 justify-center w-10/12">
+    <div class="font-jost text-xl my-10">
+        <%= @query.content %>
+    </div>
+    <div>
+        <sl-tab-group>
+            <sl-tab slot="nav" panel="general">General</sl-tab>
+            <sl-tab slot="nav" panel="sentiment">Sentiment (Raw)</sl-tab>
+            <sl-tab slot="nav" panel="entities">Entities (Raw)</sl-tab>
+            <sl-tab slot="nav" panel="syntax">Syntax (Raw)</sl-tab>
+
+            <sl-tab-panel name="general">
+                <p class="text-large font-semibold font-jost">Language</p>
+                <p class="text-large font-jost"><%= @query.sentiment_language %></p>
+                <br>
+                <p class="text-large font-semibold font-jost">Sentiment Score</p>
+                <p class="text-large font-jost"><%= @query.sentiment_score %>  
+                <% if @query.sentiment_score.to_f > 0 %>
+                    <sl-icon name="emoji-smile" style="font-size: 20px; color: green;"></sl-icon>             
+                <% elsif @query.sentiment_score.to_f == 0 %>
+                    <sl-icon name="emoji-neutral" style="font-size: 20px; color: grey;"></sl-icon>  
+                <% else %>
+                    <sl-icon name="emoji-frown" style="font-size: 20px; color: red;"></sl-icon>  
+                <% end %>
+                </p>
+                <br>
+                <p class="text-large font-semibold font-jost">Sentiment Magnitude</p>
+                <p class="text-large font-jost"><%= @query.sentiment_magnitude %></p>
+                <br>
+            </sl-tab-panel>
+            <sl-tab-panel name="sentiment"><%= @query.sentiment_raw %></sl-tab-panel>
+            <sl-tab-panel name="entities"><%= @query.entities_raw %></sl-tab-panel>
+            <sl-tab-panel name="syntax"><%= @query.syntax_raw %></sl-tab-panel>
+        </sl-tab-group>
+    </div>
+</div>
+</div>

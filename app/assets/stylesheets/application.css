@@ -1,0 +1,162 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+
+** Linked fonts **
+font-family: 'Jost', sans-serif;
+font-family: 'Limelight', cursive;
+font-family: 'Poiret One', cursive;
+font-family: 'Press Start 2P', cursive;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto', sans-serif;
+ */
+
+ a:link {
+    text-decoration: none;
+  }
+
+ #title {
+    font-family: 'Poiret One', cursive;
+}
+
+.subtitle {
+    font-family: 'Poiret One', cursive;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    background-color: steelblue;
+    font-family: 'Jost', sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+.header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.header li {
+    float: left;
+}
+
+.header li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.header li a:hover {
+    background-color: #111111;
+}
+
+.list_item {
+    border: solid  rgb(78, 78, 78);
+    border-width: 2px;
+    background-color: white;
+    border-radius: 5px;
+    list-style: none;
+    padding: 20px 20px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    font-family: 'Jost', sans-serif;
+    color: black;
+}
+
+.list_item:hover {
+    border: solid rgb(78, 78, 78);
+    border-width: 2px;
+    min-width: 90%;
+    font-size: 18px;
+    background-color: rgb(78, 78, 78);
+    color: white;
+    transition:background 2s color 1s;
+    border-color: rgb(78, 78, 78);
+    cursor: pointer; 
+}
+
+ul {
+   list-style: none;
+}
+
+#history {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#query_content {
+    width: 400px;
+}
+
+form {
+    margin:0 0 50px;
+    }
+    
+form input[type=text] {
+    background:#dddddd;
+    border:none;
+    border-left:2px solid #fff;
+    font-size:20px;
+    font-family: 'Jost', sans-serif;
+    padding:20px;
+    border-left:2px solid #000;
+}
+    
+form input[type=text]:focus {
+    background:#fff;
+    border-left:2px solid #000;
+    box-shadow:none;
+    outline:none;
+}
+    
+#analyze_btn {
+    background:transparent;
+    border:none;
+    color: steelblue;
+    cursor:pointer;
+    font-size:28px;
+    font-family: 'Jost', sans-serif;
+    transition:background 2s color 1s;
+    padding:10px 14px;
+}
+    
+#analyze_btn:hover {
+    background: steelblue;
+    color:#fff;
+    transition:background 2s color 1s;
+}
+
+.queries {
+    min-width: 90%;
+    font-size: 18px;
+}
+
+.queries span {
+    font-style: italic;
+    font-size: 14px;
+}
+
+.show_content {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    font-family: 'Jost', sans-serif;
+    font-size:20px;
+}
